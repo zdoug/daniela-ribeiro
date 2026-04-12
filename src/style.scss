@@ -66,6 +66,7 @@
 
 html {
   font-size: var(--font-size);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -103,6 +104,15 @@ body {
 .d-flex {
   display: flex;
 }
+.mb-4 {
+  margin-bottom: 4rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-4 {
+  margin-top: 4rem;
+}
 .gap-20 {
   row-gap: var(--gap);
 }
@@ -121,18 +131,27 @@ body {
 .text-align-center {
   text-align: center;
 }
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
+
 main {
   background: var(--secondary-color) url(assets/frente-predio.jpg) no-repeat center;
   background-size: cover;
   color: white;
-  padding-top: 5rem;
-  padding-bottom: 0rem;
+  padding-top: 4rem;
+  overflow-y: hidden;
+  padding-bottom: 7rem;
+  & .ebook__title {
+    display: flex;
+    column-gap: var(--gap);
+    align-items: center;
+    margin-bottom: 3rem;
+    & strong {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+        & span {
+        font-weight: 200;
+      }
+    }
+  }
   & .main-price {
     font-size: 2rem;
     color: white;
@@ -141,6 +160,22 @@ main {
       color: var(--text-color-negative);
       font-style: normal;
     }
+  }
+}
+.ball-ref {
+  position: relative;
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 467px;
+    height: 467px;
+    background: var(--primary-color);
+    filter: blur(120px);
+    z-index: -1;
+    opacity: .6;
   }
 }
 section {
@@ -193,11 +228,23 @@ p, li {
   &__primary {
     background: #FBDA9D;
     background: linear-gradient(180deg, #FBDA9D 0%, #B3A58B 100%);
+    transition: all .2s ease;
     color: var(--text-color-positive);
+    &:hover, &:focus {
+      background: linear-gradient(180deg, #B3A58B 0%, #FBDA9D 100%);
+      transition: all .2s ease;
+    }
   }
   &__ghost {
     border-color: var(--primary-color);
     color: var(--text-color-negative);
+    background: transparent;
+    transition: all .2s ease;
+    &:hover, &:focus {
+      background: var(--text-color-negative);
+      color: var(--text-color-positive);
+      transition: all .2s ease;
+    }
   }
 }
 .text-color-positive {
@@ -224,7 +271,44 @@ p, li {
   &__buy {
     & ul {
       width: 100%;
-      list-style-position: inside;
+      display: flex;
+      flex-direction: column;
+      row-gap: .4rem;
+      align-items: center;
+      list-style: none;
+      & li {
+        margin-top: .5rem;
+        display: flex;
+        align-items: center;
+        &:before {
+          content: url(./assets/icon-check-green.svg);
+          display: inline-block;
+          margin-right: 1.6rem;
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+  &__price-box {
+    &__call {
+      font-size: 2.2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: -3rem;
+    }
+    &__price {
+      color: var(--primary-color);
+      font-size: 8rem;
+      font-weight: 400;
+      & span {
+        font-size: 3rem;
+        font-weight: 200;
+        display: inline-block;
+        &:last-child {
+          transform: translateY(-30px);
+        }
+      }
     }
   }
 }
@@ -264,5 +348,117 @@ footer {
   & small {
     text-align: center;
     display: block;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  p {
+    font-size: 1.8rem;
+  }
+  .btn-group {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .btn {
+    padding: 1.2rem 3.2rem;
+    font-size: 1.6rem;
+    width: 100%;
+  }
+  main {
+    margin-top: 0;
+    text-align: center;
+    & .container {
+      flex-direction: column;
+      row-gap: 4rem;
+      align-items: center;
+      & .main-price {
+        font-size: 1.8rem;
+      }
+      .ball-ref {
+        & img {
+          max-width: 400px;
+        }
+      }
+      & .ebook__title {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 1rem;
+        margin-bottom: 1rem;
+        & img {
+          max-width: 30px;
+        }
+      }
+      & h1 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    &.about-daniela {
+      & .container {
+        flex-direction: column;
+        row-gap: 4rem;
+      }
+    }
+    &.questions {
+      text-align: left;
+    }
+  }
+  h2 {
+    font-size: 2.8rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+  .container:has(.card) {
+    flex-direction: column;
+    row-gap: var(--gap);
+    align-items: center;
+  }
+  .card {
+    align-items: center;
+    padding: 2.4rem;
+    &__buy {
+      & ul {
+        row-gap: 0.2rem;
+        & li {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    &__price-box {
+      &__price {
+        font-size: 6rem;
+        & span:last-child {
+          transform: translateY(-20px);
+        }
+      }
+    }
+    & img {
+      max-width: 3.5rem;
+    }
+  }
+  details {
+    & summary {
+      font-size: 1.8rem;
+    }
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  main {
+    & .container {
+      & .ball-ref {
+        & img {
+          max-width: 100%;
+        }
+      }
+    }
   }
 }

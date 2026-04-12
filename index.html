@@ -7,41 +7,35 @@
     <title>Guia Do Tradicional ao Alto Padrão - Daniela Ribeiro</title>
   </head>
   <body>
-    <header>
+    <main>
       <div class="container">
-        <div class="col-6">
+        <div class="col-6 d-flex flex-direction-column gap-20">
           <div class="ebook__title">
-            <img src="" alt="">
-            <strong>Guia<br>
+            <img src="./src/assets/icon-book.svg" alt="Ícone E-book">
+            <strong><span>Guia</span><br>
           Do Tradicional ao Alto Padrão</strong>
           </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="container align-items-center">
-        <div class="col-6 d-flex flex-direction-column gap-20">
           <h1>Conquiste o mais Alto Padrão do Mercado Imobiliário</h1>
           <p>O Guia da Transição para Corretores que buscam fazer parte do mercado mais lucrativo do mercado imobiliário.</p>
           <div class="btn-group">
-            <a href="" class="btn btn__primary">Comprar Guia</a>
-            <a href="" class="btn btn__ghost">Saiba mais</a>
+            <a href="#buy" class="btn btn__primary">Comprar Guia</a>
+            <a href="#who" class="btn btn__ghost">Saiba mais</a>
           </div>
           <span class="main-price">Por apenas <em>R$ 67.90</em> à vista</span>
         </div>
-        <div class="col-6">
+        <div class="col-6 ball-ref">
           <img src="./src/assets/daniela-ribeiro-sorrindo.png" alt="" class="img-fluid">
         </div>
       </div>
     </main>
-    <section class="who">
+    <section class="who" id="who">
       <div class="container justify-content-center">
         <div class="col-6">
           <h2 class="text-color-positive text-align-center">O mercado dos imóveis de alto padrão espera por você.</h2>
-          <p class="text-align-center">Este guia é ideal para corretores que:</p>
+          <p class="text-align-center mt-2">Este guia é ideal para corretores que:</p>
         </div>
       </div>
-      <div class="container">
+      <div class="container mt-4">
         <div class="col-4 card flex-direction-column gap-20">
           <img src="./src/assets/icon-coin.svg" alt="" class="card__icon--coin">
           <p>Já têm certa experiência no mercado de imóveis, mas buscam comissões mais atrativas.</p>
@@ -57,10 +51,12 @@
       </div>
     </section>
     <section class="about-ebook">
-      <div class="container">
-        <h2 class="text-color-positive text-align-center">Neste guia você vai:</h2>
+      <div class="container justify-content-center">
+        <div class="col-6">
+          <h2 class="text-color-positive text-align-center">Neste guia você vai:</h2>
+        </div>
       </div>
-      <div class="container">
+      <div class="container mt-4">
         <div class="col-3 card flex-direction-column gap-20">
           <img src="./src/assets/icon-check.svg" alt="" class="card__icon--check">
           <p>Entender o que diferencia o mercado imobiliário de alto padrão do mercado tradicional.</p>
@@ -78,21 +74,21 @@
           <p>Saber quais estratégias usar para ser reconhecido(a) e respeitado(a) neste nicho.</p>
         </div>
       </div>
-      <div class="container">
-        <div class="col-6">
-          <a href="" class="btn btn__primary">Comprar Guia</a>
+      <div class="container justify-content-center mt-4">
+        <div class="col-6 text-align-center">
+          <a href="#buy" class="btn btn__primary">Comprar Guia</a>
         </div>
       </div>
     </section>
     <section class="about-daniela">
-      <div class="container">
+      <div class="container align-items-center">
         <div class="col-6 d-flex flex-direction-column gap-20">
           <h2 class="text-color-negative">Quem é Daniela Ribeiro?</h2>
           <p>Daniela Ribeiro é consultora e mentora imobiliária, especialista em imóveis de alto padrão em Londrina/PR, com mais de 10 anos de experiência no mercado.</p>
           <p>Atuando exclusivamente com a venda de imóveis de alto padrão, Daniela consolidou-se como referência no atendimento a famílias e investidores exigentes, compreendendo as particularidades, comportamentos e expectativas desse público.</p>
           <div class="btn-group">
-            <a href="" class="btn btn__primary">Comprar Guia</a>
-            <a href="" class="btn btn__ghost">Me siga no Instagram</a>
+            <a href="#buy" class="btn btn__primary">Comprar Guia</a>
+            <a href="https://www.instagram.com/danielaribeiroimoveis/" target="_blank" rel="external" class="btn btn__ghost">Me siga no Instagram</a>
           </div>
         </div>
         <div class="col-6">
@@ -100,7 +96,7 @@
         </div>
       </div>
     </section>
-    <section class="buy">
+    <section class="buy" id="buy">
       <div class="container justify-content-center">
         <div class="col-5 d-flex flex-direction-column gap-20">
           <h2 class="text-color-positive">Chegou a hora de você entrar no mercado imobiliário mais rentável do Brasil e do mundo.</h2>
@@ -111,12 +107,11 @@
           <ul>
             <li>Acesso Imediato</li>
             <li>Rápido e Objetivo</li>
-            <li>7 dias de garantia</li>
             <li>Aplique hoje mesmo!</li>
           </ul>
           <div class="card__price-box">
-            <span>Por apenas</span>
-            <strong><span>R$ </span>67.90</strong>
+            <span class="card__price-box__call">Por apenas</span>
+            <strong class="card__price-box__price"><span>R$ </span>67<span>,90</span></strong>
             <a href="" class="btn btn__primary">Quero ser corretor(a) de alto padrão</a>
             <span>PAGAMENTO COM ACESSO IMEDIATO VIA CARTÃO OU PIX</span>
           </div>
@@ -129,7 +124,7 @@
           <h2 class="text-color-positive text-align-center">Perguntas Frequentes</h2>
         </div>
       </div>
-      <div class="container justify-content-center">
+      <div class="container justify-content-center mt-2">
         <div class="col-8">
           <details>
             <summary>O que exatamente vou aprender com esse guia?</summary>
