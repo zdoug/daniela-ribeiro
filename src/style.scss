@@ -4,6 +4,9 @@
   --gap: 20px;
   --primary-color: #A59984;
   --secondary-color: #332B28;
+  --text-color-positive: #333333;
+  --text-color-negative: #EFDBB7;
+  --bg-secondary: #FBF3E4;
 }
 @font-face {
     font-family: SegoeUI;
@@ -70,7 +73,7 @@ body {
 }
 
 .container {
-  max-width: 1240px;
+  max-width: 1200px;
   padding-left: var(--gap);
   padding-right: var(--gap);
   column-gap: var(--gap);
@@ -81,6 +84,43 @@ body {
     flex: 1 0 0;
   }
 }
+.col-4 {
+  max-width: 386.66666666666666666666666666667px;
+}
+.col-5 {
+  max-width: 488px;
+}
+.col-6 {
+  max-width: 590px; 
+}
+.col-8 {
+  max-width: 794px;
+}
+.img-fluid {
+  display: block;
+  max-width: 100%;
+}
+.d-flex {
+  display: flex;
+}
+.gap-20 {
+  row-gap: var(--gap);
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+.flex-direction-row {
+  flex-direction: row;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.text-align-center {
+  text-align: center;
+}
 header {
   position: fixed;
   top: 0;
@@ -88,14 +128,32 @@ header {
   width: 100%;
 }
 main {
-  background: var(--secondary-color);
+  background: var(--secondary-color) url(assets/frente-predio.jpg) no-repeat center;
+  background-size: cover;
   color: white;
-  padding-top: 18rem;
-  padding-bottom: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 0rem;
+  & .main-price {
+    font-size: 2rem;
+    color: white;
+    font-weight: 300;
+    & em {
+      color: var(--text-color-negative);
+      font-style: normal;
+    }
+  }
 }
 section {
   padding-top: 10rem;
   padding-bottom: 10rem;
+  &.about-ebook, &.questions {
+    background: var(--bg-secondary);
+  }
+  &.about-daniela {
+    background: var(--secondary-color);
+    color: white;
+    padding-bottom: 0;
+  }
 }
 h1 {
   font-size: 6rem;
@@ -108,8 +166,103 @@ h2 {
   font-weight: 200;
   line-height: 1.2;
 }
+h3 {
+  font-size: 3.2rem;
+  font-weight: 200;
+  line-height: 1.2;
+}
 
-p {
+p, li {
   font-size: 2rem;
   font-weight: 200;
+  line-height: 1.4;
+}
+.btn-group {
+  display: flex;
+  column-gap: var(--gap);
+}
+.btn {
+  border: 1px solid transparent;
+  padding: 1.6rem 3.2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 60px;
+  display: inline-block;
+  text-align: center;
+  &__primary {
+    background: #FBDA9D;
+    background: linear-gradient(180deg, #FBDA9D 0%, #B3A58B 100%);
+    color: var(--text-color-positive);
+  }
+  &__ghost {
+    border-color: var(--primary-color);
+    color: var(--text-color-negative);
+  }
+}
+.text-color-positive {
+  color: var(--primary-color);
+}
+.text-color-negative {
+  color: white;
+}
+
+.card {
+  border: 1px solid var(--primary-color);
+  padding: 3.2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: start;
+  & img {
+    max-height: 48px;
+  }
+  &__buy, &__price-box {
+    flex-direction: column;
+    row-gap: var(--gap);
+    display: flex;
+  }
+  &__buy {
+    & ul {
+      width: 100%;
+      list-style-position: inside;
+    }
+  }
+}
+details {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  border-bottom: 1px solid var(--primary-color);
+  &[open] {
+    & summary {
+      &::marker {
+        color: var(--primary-color);
+      }
+    }
+  }
+  & summary {
+    cursor: pointer;
+    list-style-position: outside;
+    padding-left: 10px; /* Space between marker and text */
+    margin-left: 15px;  /* Moves the entire marker and text block */
+    font-weight: 300;
+    font-size: 2.4rem;
+    &::marker {
+      font-size: 1.5rem;
+    }
+  }
+  & p {
+    font-size: 1.8rem;
+  }
+}
+footer {
+  padding: 3rem 0;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.8rem;
+  & small {
+    text-align: center;
+    display: block;
+  }
 }
