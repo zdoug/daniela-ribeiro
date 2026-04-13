@@ -195,7 +195,7 @@ section {
   }
   &.testimonials {
     background-color: var(--primary-color);
-    & h2 {
+    & h2, h2 + p, h2 + p > a {
       color: var(--text-color-negative);
     }
     & .card {
@@ -377,6 +377,13 @@ details {
   }
   & p {
     font-size: 1.8rem;
+    & + p {
+      margin-top: 1rem;
+    }
+    & a {
+      color: var(--primary-color);
+      font-weight: 400;
+    }
   }
 }
 footer {
