@@ -113,6 +113,9 @@ body {
 .mt-4 {
   margin-top: 4rem;
 }
+.gap-10 {
+  row-gap: 10px;
+}
 .gap-20 {
   row-gap: var(--gap);
 }
@@ -185,21 +188,57 @@ section {
     background: var(--bg-secondary);
   }
   &.about-daniela {
-    background: var(--secondary-color);
+    background: var(--secondary-color) url(./assets/bg-building.jpg) no-repeat top center;
+    background-size: cover;
     color: white;
     padding-bottom: 0;
   }
+  &.testimonials {
+    background-color: var(--primary-color);
+    & h2 {
+      color: var(--text-color-negative);
+    }
+    & .card {
+      background: var(--bg-secondary);
+      border-color: var(--text-color-negative);
+      height: fit-content;
+      & h3 {
+        font-size: 2rem;
+      }
+      & p {
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+    }
+  }
+  &#buy {
+      & .container {
+        column-gap: 8rem;
+      }
+    }
 }
 h1 {
   font-size: 6rem;
   font-weight: 100;
   line-height: 1.2;
+  & strong {
+    font-weight: 700;
+    color: var(--primary-color);
+    background: linear-gradient(90deg, var(--text-color-negative), var(--primary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 h2 {
   font-size: 4.4rem;
   font-weight: 200;
   line-height: 1.2;
+  & strong {
+    font-weight: 700;
+  }
 }
 h3 {
   font-size: 3.2rem;
