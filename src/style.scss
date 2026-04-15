@@ -452,11 +452,6 @@ footer {
     padding-top: 6rem;
     padding-bottom: 6rem;
     text-align: center;
-    &.who {
-      & iframe {
-        height: 450px;
-      }
-    }
     &.about-daniela {
       & .container {
         flex-direction: column;
