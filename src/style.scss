@@ -119,6 +119,10 @@ body {
 .gap-20 {
   row-gap: var(--gap);
 }
+.gap-40 {
+  gap: 40px;
+}
+
 .flex-direction-column {
   flex-direction: column;
 }
@@ -184,6 +188,11 @@ main {
 section {
   padding-top: 10rem;
   padding-bottom: 10rem;
+  &.who {
+    iframe {
+      border-radius: 20px;
+    }
+  }
   &.about-ebook, &.questions {
     background: var(--bg-secondary);
   }
@@ -443,6 +452,11 @@ footer {
     padding-top: 6rem;
     padding-bottom: 6rem;
     text-align: center;
+    &.who {
+      & iframe {
+        height: 450px;
+      }
+    }
     &.about-daniela {
       & .container {
         flex-direction: column;
