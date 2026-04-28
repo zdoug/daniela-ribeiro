@@ -166,6 +166,9 @@ main {
     & em {
       color: var(--text-color-negative);
       font-style: normal;
+      &:first-of-type {
+        text-decoration: line-through;
+      }
     }
   }
 }
@@ -344,6 +347,10 @@ p, li {
       font-weight: 400;
       text-transform: uppercase;
       margin-bottom: -3rem;
+      & span {
+        color: var(--primary-color);
+        text-decoration: line-through;        
+      }
     }
     &__price {
       color: var(--primary-color);
