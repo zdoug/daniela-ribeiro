@@ -458,7 +458,24 @@ footer {
   section {
     padding-top: 6rem;
     padding-bottom: 6rem;
-    text-align: center;
+    &#who {
+       & .col-4 {
+        min-width: initial;
+        width: 100%;
+       }
+      & h3 {
+        min-height: auto;
+        margin-bottom: 2rem;
+      }
+      & .container {
+        flex-direction: column;
+        row-gap: 4rem;
+        align-items: center;
+      }
+       iframe {
+        width: 100%;
+      }
+    }
     &.about-daniela {
       & .container {
         flex-direction: column;
@@ -523,4 +540,45 @@ footer {
       }
     }
   }
+}
+
+#who {
+  & h3 {
+    margin-bottom: 3rem;
+    min-height: 76px;
+  }
+  & ul.positive-list, & ul.negative-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    list-style: none;
+    & li {
+      display: flex;
+      font-size: 1.8rem;
+    }
+  }
+  & ul.positive-list li::before {
+    content: url(./assets/icon-check-small.svg);
+    display: inline-block;
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+  }
+  & ul.negative-list li::before {
+    content: url(./assets/icon-negative-small.svg);
+    display: inline-block;
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+  }
+  .container span {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem 2rem;
+    background: #ddd;
+    color: #333;
+    font-size: 1.6rem;
+    border-radius: 12px;
+  }
+
 }
